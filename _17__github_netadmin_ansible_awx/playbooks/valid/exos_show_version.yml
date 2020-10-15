@@ -1,0 +1,17 @@
+---
+  - name: Return switch version
+    hosts: Extreme_EXOS
+    gather_facts: true
+    tasks:
+      - name: run multiple commands and evaluate the output
+        exos_command:
+          commands:
+            - show version
+            - show ports no-refresh
+            - show version
+          wait_for:
+            - result[0] contains ExtremeXOS
+            - result[1] contains 20
+            - result[2] contains Switch
+        when: ansible_network_os == 'exos'
+...

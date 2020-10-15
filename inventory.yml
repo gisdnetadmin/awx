@@ -1,0 +1,155 @@
+---
+all:
+  children:
+    linux:
+      hosts:
+        cs-ansible:
+          ansible_user: root
+          ansible_host: 10.111.255.20
+        cs-centos:
+          ansible_user: root
+          ansible_host: 10.111.255.33
+        tec-ntop:
+          ansible_user: root
+          ansible_host: 10.111.2.92
+        myip:
+          ansible_user: root
+          ansible_host: 10.111.2.221
+          ansible_python_interpreter: '/usr/bin/python3.6'
+        adm-ids-snort1:
+          ansible_user: root
+          ansible_host: 10.111.255.57
+          ansible_python_interpreter: '/usr/bin/python3'
+        tec-ids:
+          ansible_user: root
+          ansible_host: 10.111.255.202
+        tec-dcim:
+          ansible_user: root
+          ansible_host: 10.111.255.160
+        tec-hids:
+          ansible_user: root
+          ansible_host: 10.191.255.1
+        tec-mailrelay:
+          ansible_user: root
+          ansible_host: 10.111.2.15
+        tec-mailscan:
+          ansible_user: root
+          ansible_host: 10.111.1.213
+        tec-mailscan-dmz:
+          ansible_user: root
+          ansible_host: 10.111.2.2
+          ansible_python_interpreter: '/opt/rh/rh-python36/root/usr/bin/python'
+        tec-mailscan-dmz2:
+          ansible_user: root
+          ansible_host: 10.111.2.3
+          ansible_python_interpreter: '/opt/rh/rh-python36/root/usr/bin/python'
+        tec-mailscan-dmz4:
+          ansible_user: root
+          ansible_host: 10.111.2.20
+          ansible_python_interpreter: '/opt/rh/rh-python36/root/usr/bin/python'
+        tec-observium:
+          ansible_user: root
+          ansible_host: 10.111.1.94
+        tec-syslog:
+          ansible_user: root
+          ansible_host: 10.111.49.90
+        tec-syslog2:
+          ansible_user: root
+          ansible_host: 10.111.255.16
+        graylog:
+          ansible_user: root
+          ansible_host: 10.111.255.10
+          #ansible_python_interpreter: '/usr/bin/python3'
+      vars:
+        ntp_server: time-a-b.nist.gov pool.ntp.org 0.pool.ntp.org 1.pool.ntp.org
+
+    ids:
+      hosts:
+        adm-ids-snort1:
+          ansible_user: root
+          ansible_host: 10.111.255.57
+          ansible_python_interpreter: '/usr/bin/python3'
+        tec-ids:
+          ansible_user: root
+          ansible_host: 10.111.255.202
+        tec-hids:
+          ansible_user: root
+          ansible_host: 10.191.255.1
+
+    security:
+      hosts:
+        adm-ids-snort1:
+          ansible_user: root
+          ansible_host: 10.111.255.57
+          ansible_python_interpreter: '/usr/bin/python3'
+        tec-ids:
+          ansible_user: root
+          ansible_host: 10.111.255.202
+        tec-hids:
+          ansible_user: root
+          ansible_host: 10.191.255.1
+
+    syslog:
+      hosts:
+        tec-syslog:
+          ansible_user: root
+          ansible_host: 10.111.49.90
+        tec-syslog2:
+          ansible_user: root
+          ansible_host: 10.111.255.16
+
+    mail:
+      hosts:
+        tec-mailrelay:
+          ansible_user: root
+          ansible_host: 10.111.2.15
+        tec-mailscan:
+          ansible_user: root
+          ansible_host: 10.111.1.213
+        tec-mailscan-dmz:
+          ansible_user: root
+          ansible_host: 10.111.2.2
+          ansible_python_interpreter: '/opt/rh/rh-python36/root/usr/bin/python'
+        tec-mailscan-dmz2:
+          ansible_user: root
+          ansible_host: 10.111.2.3
+          ansible_python_interpreter: '/opt/rh/rh-python36/root/usr/bin/python'
+        tec-mailscan-dmz4:
+          ansible_user: root
+          ansible_host: 10.111.2.20
+          ansible_python_interpreter: '/opt/rh/rh-python36/root/usr/bin/python'
+
+    apache:
+      hosts:
+        myip:
+          ansible_user: root
+          ansible_host: 10.111.2.221
+          ansible_python_interpreter: '/usr/bin/python3.6'
+
+    www:
+      hosts:
+        myip:
+          ansible_user: root
+          ansible_host: 10.111.2.221
+          ansible_python_interpreter: '/usr/bin/python3.6'
+
+    app:
+      hosts:
+        cs-ansible:
+          ansible_user: root
+          ansible_host: 10.111.255.20
+        cs-centos:
+          ansible_user: root
+          ansible_host: 10.111.255.33
+        tec-ntop:
+          ansible_user: root
+          ansible_host: 10.111.2.92
+        tec-dcim:
+          ansible_user: root
+          ansible_host: 10.111.255.160
+        tec-observium:
+          ansible_user: root
+          ansible_host: 10.111.1.94
+        graylog:
+          ansible_user: root
+          ansible_host: 10.111.255.10

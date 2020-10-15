@@ -1,0 +1,18 @@
+---
+- name: "Demonstrate connecting to switches"
+  hosts: ghs05-21-10g
+  gather_facts: yes
+
+  tasks:
+    ###
+    #
+    #
+    - name: Gather facts (ops)
+      ios_facts:
+        when: ansible_network_os == 'ios'
+    ###
+    # Demonstrate variables
+    #     #
+    - name: Display some facts
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"

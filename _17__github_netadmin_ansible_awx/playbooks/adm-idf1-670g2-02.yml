@@ -1,0 +1,12 @@
+---
+  - name: Return switch version
+    hosts: adm-idf1-670g2-02
+    gather_facts: false
+    tasks:
+      - name: run multiple commands and evaluate the output
+        exos_command:
+          commands:
+            - show version
+            - show ports no-refresh
+            - show version
+...
